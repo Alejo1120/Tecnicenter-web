@@ -18,7 +18,7 @@
     app.use(express.static(path.join(__dirname, '../public/')));      //carpeta public de archivos estaticos
     app.use(indexrouter);  // se usa el controlador de rutas
 
-    app.listen(5000,()=>{
+    app.listen(port,()=>{
         console.log("servidor corriendo en el puerto 5000");
 
     });
