@@ -15,8 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
+
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="CSS/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     
 </head>
 
@@ -215,44 +217,41 @@
             <!-- Contact Section Form-->
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-
-
                         <form id="formulario">      <!--en idex.js encontramos esa ruta-->
-                                    
-
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                            <label>Nombre</label>
-                                            <input class="form-control" id="nombre" type="text" placeholder="Nombre" required="required" data-validation-required-message="Por favor ingrese su nombre." />
+                                            <label>Nombre y Apellido</label>
+                                            <input class="form-control" id="nombre" class='nombre' type="text" placeholder="Nombre y Apellido" required="required" data-validation-required-message="Por favor ingrese su nombre y Apellido." />
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                            <label>Correo Electronico</label>
-                                            <input class="form-control" id="email" type="email" placeholder="Email de contacto" required="required" data-validation-required-message="Por favor ingrese su correo electronico." />
+                                            <label>Direccion</label>
+                                            <input class="form-control" id="apellidos" type="text" placeholder="Direccion" required="required" data-validation-required-message="Por favor ingrese su Direccion." />
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                            <label>Numero de telefono</label>
-                                            <input class="form-control" id="phone" type="tel" placeholder="Numero de celular" required="required" data-validation-required-message="Por favor ingrese su numero de telefono." />
+                                            <label>Tipo Articulo</label>
+                                            <input class="form-control" id="tipo" type="text" placeholder="Tipo Articulo y Marca" required="required" data-validation-required-message="Por favor ingrese su Direccion." />
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Mensaje</label>
-                                            <textarea class="form-control" id="mensaje" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Por favor escriba un mensaje."></textarea>
+                                            <textarea class="form-control" id="email" rows="5" placeholder="Mensaje" required="required" data-validation-required-message="Por favor escriba un mensaje."></textarea>
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <br />
                                     <div id="success"></div>
                                     <div class="form-group">
-                                    <button class="btn btn-primary btn-xl" onclick="enviaremail()">Enviar</button></div>      <!--medodo onclick enviamos a la funcion enviar email de js-->
-                            </form>
+                                    <button class="btn btn-primary btn-xl" id="submit" type="submit" class="boton"><i class="fab fa-whatsapp"></i>  Enviar</button>
+                                </div>      <!--medodo onclick enviamos a la funcion enviar email de js-->
+                        </form>
 
                     </div>
                 </div>
@@ -540,7 +539,20 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        $(".box-input input").on("focus", function(){
+            $(this).addClass("focus");
+        });
 
+        $(".box-input input").on("blur", function(){
+            if($(this).val() == ""){
+                $(this).removeClass("focus");
+            }
+        });
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <!-- Core theme JS-- arriba va lo eliminado de los scripts--->
     <script src="js/scripts.js"></script>
 </body>
